@@ -5,7 +5,7 @@
     <div class="row pb-4">
         <div class="col">
             <button class="btn btn-success" type="submit">
-                <a href="{{ url('addClub') }}" class="text-white text-decoration-none">+Add Pertandingan</a>
+                <a href="{{ url('add') }}" class="text-white text-decoration-none">+Add Pertandingan</a>
             </button>
         </div>
     </div>

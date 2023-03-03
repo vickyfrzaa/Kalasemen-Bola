@@ -11,10 +11,9 @@ class IndexController extends Controller
 {
     public function index(){
         $pertandingans = DB::table('club')
-            ->leftjoin('pertandingan', 'pertandingan.namaClub', '=', 'club.namaClub')
             ->select('club.namaClub', 
                     DB::raw('count(*) as ma'), 
-                    DB::raw('sum(case when club.namaClub = pertandingan.namaClub THEN 
+                    DB::raw('sum(case when club.namaClub = pertandingan.namaClub THEN
                         case when skor > skor2 then 1 else 0 end
                     else
                         case when skor2 > skor then 1 else 0 end
@@ -40,6 +39,8 @@ class IndexController extends Controller
                     when skor2 = skor then 1
                     else 0 end
                     end) as point'))
+            ->leftjoin('pertandingan', 'pertandingan.namaClub', '=', 'club.namaClub')
+            ->orderby('point', 'DESC')
             ->groupby('club.namaClub')
             ->get();
         
