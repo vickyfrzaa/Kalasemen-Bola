@@ -35,9 +35,13 @@
                                 <tr>
                                     <th scope="row">{{ $no++ }}</th>
                                     <td>{{ $data->namaClub }}</td>
-                                    <td>{{ $data->skor }}</td>
-                                    <td>{{ $data->namaClub2 }}</td>
-                                    <td>{{ $data->skor2 }}</td>
+                                    <td>{{ $data->ma }}</td>
+                                    <td>{{ $data->me }}</td>
+                                    <td>{{ $data->s }}</td>
+                                    <td>{{ $data->k }}</td>
+                                    <td>{{ $data->gm }}</td>
+                                    <td>{{ $data->gk }}</td>
+                                    <td>{{ $data->point }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

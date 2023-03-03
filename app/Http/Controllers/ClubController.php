@@ -23,6 +23,6 @@ class ClubController extends Controller
         $data->save();
      
         return back()
-        ->with('success', 'New subject has been added.');
+        ->with('success', 'Nama Club Baru Saja Ditambahkan.');
     }
 }

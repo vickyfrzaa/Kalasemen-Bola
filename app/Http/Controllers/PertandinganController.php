@@ -5,10 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Pertandingan;
+use App\Models\Club;
 
 class PertandinganController extends Controller
 {
     public function index(){
+        $clubs = Club::All();
+        
+        return view('add')
+        ->with('dataClub', $clubs);
+
         return view('add');
     }
 
@@ -25,6 +31,6 @@ class PertandinganController extends Controller
         }
      
         return back()
-        ->with('success', 'New subject has been added.');
+        ->with('success', 'Hasil Pertandingan Baru Saja Ditambahkan.');
     }
 }

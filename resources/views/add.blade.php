@@ -38,14 +38,26 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <input type="text" class="form-control" name="inputs[0][namaClub]" placeholder="Nama Club" aria-label="Nama Club">
+                                    <select class="form-select" name="inputs[0][namaClub]" aria-label="Default select example">
+                                        <option selected>Open this select menu</option>
+                                        @foreach($dataClub as $data)
+                                            <option value="{{ $data->namaClub }}">{{ $data->namaClub }}</option>
+                                        @endforeach
+                                    </select>
+                                        <!-- <input type="text" class="form-control" name="inputs[0][namaClub]" placeholder="Nama Club" aria-label="Nama Club"> -->
                                     </td>
                                     <td>
                                         <input type="number" class="form-control" name="inputs[0][skor]" placeholder="Skor" aria-label="Skor">
                                     </td>
                                     <td>VS</td>
                                     <td>
-                                        <input type="text" class="form-control" name="inputs[0][namaClub2]" placeholder="Nama Club2" aria-label="Nama Club2">
+                                        <select class="form-select" name="inputs[0][namaClub2]" aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            @foreach($dataClub as $data)
+                                                <option value="{{ $data->namaClub }}">{{ $data->namaClub }}</option>
+                                            @endforeach
+                                        </select>
+                                        <!-- <input type="text" class="form-control" name="inputs[0][namaClub2]" placeholder="Nama Club2" aria-label="Nama Club2"> -->
                                     </td>
                                     <td>
                                         <input type="number" class="form-control" name="inputs[0][skor2]" placeholder="Skor2" aria-label="Skor2">
@@ -70,7 +82,7 @@
       var i = 0;
       $('#add').click(function () {
           ++i;
-          $('#table').append('<tr><td><input type="text" name="inputs['+i+'][namaClub]" placeholder="Nama Club" class="form-control" /></td><td><input type="number" name="inputs['+i+'][skor]" placeholder="Skor" class="form-control" /></td><td>VS</td><td><input type="text" name="inputs['+i+'][namaClub2]" placeholder="Nama Club2" class="form-control" /></td><td><input type="number" name="inputs['+i+'][skor2]" placeholder="Skor2" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-input-field">Delete</button></td></tr>');
+          $('#table').append('<tr><td><select class="form-select" name="inputs['+i+'][namaClub]" aria-label="Default select example"><option selected>Open this select menu</option>@foreach($dataClub as $data)<option value="{{ $data->namaClub }}">{{ $data->namaClub }}</option>@endforeach</select></td><td><input type="number" name="inputs['+i+'][skor]" placeholder="Skor" class="form-control" /></td><td>VS</td><td><select class="form-select" name="inputs['+i+'][namaClub2]" aria-label="Default select example"><option selected>Open this select menu</option>@foreach($dataClub as $data)<option value="{{ $data->namaClub }}">{{ $data->namaClub }}</option>@endforeach</select></td><td><input type="number" name="inputs['+i+'][skor2]" placeholder="Skor2" class="form-control" /></td><td><button type="button" class="btn btn-danger remove-input-field">Delete</button></td></tr>');
       });
 
       $(document).on('click', '.remove-input-field', function () {
