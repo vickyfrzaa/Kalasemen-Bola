@@ -9,21 +9,7 @@
                 <div class="card-body">
                     <form action="{{ url('add') }}" method="POST">
                         @csrf
-                            @if($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            @endif
-
-                            @if(Session::has('success'))
-                                <div class="alert alert-success text-center">
-                                    <p>{{ Session::get('success') }}</p>
-                                </div>
-                            @endif
+                            
                         <table id="table" class="table table-hover">
                             <thead>
                                 <tr>

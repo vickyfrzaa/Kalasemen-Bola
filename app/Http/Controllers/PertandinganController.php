@@ -30,7 +30,7 @@ class PertandinganController extends Controller
             Pertandingan::create($value);
         }
      
-        return back()
+        return redirect('/')
         ->with('success', 'Hasil Pertandingan Baru Saja Ditambahkan.');
     }
 }
